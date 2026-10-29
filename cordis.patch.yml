@@ -1,0 +1,9 @@
+# 本插件的 bundle 层 patch（把 session-trash 插入 loader）。
+#
+# 默认部署走 **profile 层**（~/.dsh/profiles/desktop/cordis.patch.yml 里的 insert），
+# 所以下面这段默认不生效；想改成 bundle 方式时，把 "dsh-session-trash" 加进
+# profile package.json 的 dsh.profile.bundles 即可（两条路径只留一条，避免重复插入）。
+- insert:
+    - id: session-trash
+      name: 'dsh-session-trash'
+      config: {}

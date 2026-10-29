@@ -1,0 +1,6 @@
+node_modules/
+*.tgz
+.npmtmp-cache/
+market-submission/
+*.bak-*
+.DS_Store

@@ -1,0 +1,42 @@
+{
+  "name": "dsh-session-trash",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "在 DSH 侧栏会话菜单里加「删除会话」与「多选批量删除」：连聊天记录一起删（删前自动备份），项目产物一律不动。",
+  "license": "MIT",
+  "main": "./host/index.js",
+  "exports": {
+    ".": "./host/index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "meta": {
+    "title": "删除会话（多选批量）",
+    "description": "侧栏会话「…」菜单新增删除与多选删除，删除聊天记录本身（自动备份，可撤销），不碰项目文件。"
+  },
+  "icon": "./icon.svg",
+  "files": [
+    "host/",
+    "client/",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
+}
